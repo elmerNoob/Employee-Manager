@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import ViewModal from "./Modal/ViewModal";
 import UpdateModal from "./Modal/UpdateModal";
+import DeleteModal from "./Modal/DeleteModal";
 
 class TableActionButtons extends Component{
 
@@ -52,7 +53,15 @@ class TableActionButtons extends Component{
                 </button>
                 <UpdateModal modalId={this.props.eachRowId} employeeData={this.state}/>
 
-                <button type="button" className="btn btn-danger">Delete</button>
+                <button type="button" className="btn btn-danger"
+                        data-bs-toggle="modal" 
+                        data-bs-target={"#deleteModal"+this.props.eachRowId}
+                        onClick={()=>{this.getEmployeeDetails(this.props.eachRowId)}}
+                >
+                    Delete
+                </button>
+                <DeleteModal modalId={this.props.eachRowId} employeeData={this.state}/>
+
             </div>
         )
     }

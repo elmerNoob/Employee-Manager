@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import TableRow from './TableRow';
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 class Table extends Component{
 
@@ -31,6 +33,7 @@ class Table extends Component{
     render(){
         return (
             <div>
+                <ToastContainer/>
                 <table className="table text-center table-hover">
                     <thead className="thead-light">
                         <tr>
