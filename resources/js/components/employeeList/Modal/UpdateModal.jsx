@@ -80,12 +80,14 @@ class UpdateModal extends Component{
                         <div className="form-group">
                             Name: <input type="text"
                                         id="employeeName"
+                                        className="form-control"
                                         value={this.state.employeeName ?? ""}
                                         onChange={this.inputEmployeeName}
                                     /><br/>
 
                             Salary: <input type="text"
                                         id="employeeSalary"
+                                        className="form-control"
                                         value={this.state.employeeSalary ?? ""}
                                         onChange={this.inputEmployeeSalary}
 

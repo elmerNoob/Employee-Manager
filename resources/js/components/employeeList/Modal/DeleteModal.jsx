@@ -1,10 +1,20 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import { toast } from "react-toastify";
 
 class DeleteModal extends Component{
     
     constructor(props){
         super(props);
+    }
+    deleteEmployeeData=(employee)=>{
+        axios.delete('delete/employee/data/'+employee).then(()=>{
+            toast.error('Employee Deleted Sucesfully');
+
+            setTimeout(() => {
+                location.reload();
+            }, 2500);
+        })
     }
 
     render(){
@@ -22,6 +32,7 @@ class DeleteModal extends Component{
                 <div className="modal-footer">
                     <button type="button" className="btn btn-danger" 
                             data-bs-dismiss="modal"
+                            onClick={()=>this.deleteEmployeeData(this.props.modalId)}
                     >Yes</button>
 
                     <button type="button" className="btn btn-secondary" 
